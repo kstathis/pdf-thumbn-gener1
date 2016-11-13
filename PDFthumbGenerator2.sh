@@ -1,21 +1,26 @@
 #!/bin/bash
 
+shopt -s globstar nullglob dotglob
+
 start=`date +%s`;
 # save start time
 
-for tfile in `find $PWD -name '*.pdf'`;
-do 
+for tfile in **/*.pdf; do
+	[ -f "$tfile" ] || continue
+	[ -L "$tfile" ] && continue
+
 
 echo;
-echo -e '\t'$tfile;
+echo -e '\t'"$tfile";
 # -e means enable interpretation of backslash escapes
 # output filename being processed
 echo;
-
-mogrify -format jpg -verbose -interlace none -density 200 -flatten -enhance -thumbnail x600 $tfile[0];
+  
+mogrify -format jpg -verbose -interlace none -density 200 -flatten -enhance -thumbnail x600 "$tfile[0]";
 #generate thumbnail
 echo -e "\t------";
-done;
+
+done
 
 end=`date +%s`;
 #save end time
