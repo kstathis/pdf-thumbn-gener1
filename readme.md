@@ -1,25 +1,28 @@
-# PDF thumbnail generator (Bash script version)
+# PDF 1st page thumbnail generator
 
 ## Synopsis
 
-A Bash script that uses imagemagick to generate thumbnails of the first page of PDFs.
+A script that uses imagemagick to generate thumbnails of the first page of PDFs.
 
 ## Scenario
 
 We have a folder with PDFs. The script will generate a JPG file of the first page of every PDF, recursively, including any subfolders with PDFs. The filename of the JPG will be the same with the PDF.
 
+
+## Type
+Bash script
+
+
 ## Prerequisites
 
-* Imagemagick
-
-```sudo apt-get install imagemagick```
+* Imagemagick ```sudo apt-get install imagemagick```
 
 
 ## Usage
 
-Place the .sh file in root folder and run it.
+Make the script executable ```chmod +x pdf-thumbn-gener.sh```
 
-To enable running type ```sudo chmod +x PDFthumbGenerator2.sh```
+Run the script ```./pdf-thumbn-gener.sh```
 
 ## Notes
 
@@ -27,7 +30,7 @@ To enable running type ```sudo chmod +x PDFthumbGenerator2.sh```
 * Every thumbnail will be saved in the same folder as the PDF.
 * The generator will show every conversion and at the end, it will display runtime for informational purpose.
 
-## Example
+## Screenshots
 
 
 Before | After
